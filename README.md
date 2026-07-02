@@ -71,6 +71,11 @@ GET    /api/requests/:id
 PATCH  /api/requests/:id/status
 Role Behavior
 
+For Windows PowerShell, create the environment file with:
+
+```powershell
+copy .env.example .env
+
 Viewer mode is read-only. A Viewer can view requests and request details, but cannot update request status.
 
 Editor mode can update a request status to:
@@ -79,3 +84,32 @@ Open
 In Progress
 Resolved
 Closed
+
+## Assumptions
+
+- This project uses mock support request data only.
+- Real authentication is not implemented.
+- The Viewer and Editor roles are controlled through a simple role selector.
+- SQLite is used to keep local setup simple.
+- The API and React app are intended to run locally for assessment review.
+
+## Known Limitations
+
+- No real login or user authentication.
+- No deployment setup included.
+- No automated tests included due to the short assessment timeline.
+- Status, priority, category, and assigned person values are kept simple for demo purposes.
+
+## QA Checklist
+
+| Case | Expected Result |
+|---|---|
+| Prisma setup and seed | Reviewer can install dependencies, run Prisma setup/seed, and see seeded requests |
+| Search by requester name or email | Only matching requests remain visible |
+| Filter by status and priority | List updates correctly and can be reset |
+| Open request detail | Selected request detail is shown clearly |
+| Viewer tries to update status | Status update is disabled and clearly blocked |
+| Editor updates status | Data updates through Prisma-backed flow and UI shows a success state |
+| No matching result | Clear empty state is shown |
+| Simulated API failure | Clear error state is shown |
+| Mobile-width view | Cards, filters, list, and detail view remain usable |
