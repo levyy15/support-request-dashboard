@@ -83,8 +83,8 @@ Editor mode can update a request status to:
 Open
 In Progress
 Resolved
-Closed
-
+Closed```
+```
 ## Assumptions
 
 - This project uses mock support request data only.
