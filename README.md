@@ -73,7 +73,7 @@ Role Behavior
 
 For Windows PowerShell, create the environment file with:
 
-```powershell
+powershell
 copy .env.example .env
 
 Viewer mode is read-only. A Viewer can view requests and request details, but cannot update request status.
@@ -83,7 +83,7 @@ Editor mode can update a request status to:
 Open
 In Progress
 Resolved
-Closed```
+Closed
 ```
 ## Assumptions
 
